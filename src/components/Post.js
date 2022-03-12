@@ -245,16 +245,6 @@ const Post = () => {
       </Wrap>
 
       
-
-
-      <VStack paddingTop="40px" spacing="2" alignItems="flex-start">
-        <Heading as="h2">What we write about</Heading>
-        <Text as="p" fontSize="lg">
-                  We write about the things that help you to improve youself and be the best 
-                  version of youself. We don't only focus on Math realated topics,We cover variety 
-                  of topics.
-        </Text>
-      </VStack>
     </Container>
   );
 };
