@@ -15,8 +15,10 @@ import {
   Stack,
   useColorMode,
   Center,
+  Text,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import Clear_Logo from '../components/img/logo.jpg'
 
 const NavLink = ({ children }: { children: ReactNode }) => (
   <Link
@@ -39,7 +41,14 @@ export default function NavBar() {
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>KMSS</Box>
+          <Box>
+            <Flex>
+              <Avatar size='sm' name='Logo' src={Clear_Logo} />
+              <Text paddingLeft={'8px'} fontSize={'20px'} fontWeight={600}>
+                KMSS
+              </Text>
+            </Flex>
+          </Box>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>

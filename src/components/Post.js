@@ -26,7 +26,7 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map((tag) => {
         return (
-          <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
+          <Tag size={'md'} variant="solid" bg="red.500" key={tag}>
             {tag}
           </Tag>
         );
@@ -245,16 +245,6 @@ const Post = () => {
       </Wrap>
 
       
-
-
-      <VStack paddingTop="40px" spacing="2" alignItems="flex-start">
-        <Heading as="h2">What we write about</Heading>
-        <Text as="p" fontSize="lg">
-                  We write about the things that help you to improve youself and be the best 
-                  version of youself. We don't only focus on Math realated topics,We cover variety 
-                  of topics.
-        </Text>
-      </VStack>
     </Container>
   );
 };
