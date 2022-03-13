@@ -1,42 +1,33 @@
 import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from "./components/Home";
+import About from "./components/About";
+import SinglePost from "./components/SinglePost";
+import Post from "./components/Post";
+import NavBar from "./components/NavBar";
+import Contact from './components/Contact';
+import NotFound from './components/NotFound';
+import Footer from './components/Footer';
+
+
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
-    </ChakraProvider>
+      <Router>
+          <NavBar />
+          <Routes>
+            <Route exact path="/" element={<Home />}/>
+            <Route exact path="/blog/test" element={<SinglePost />}/>
+            <Route exact path="/blog" element={<Post />}/>
+            <Route exact path="/contact" element={<Contact />}/>
+            <Route path="*" element={<NotFound />}/>
+          </Routes>
+          {/* <NotFound/> */}
+          <Footer/>
+
+      </Router>
   );
 }
+
 
 export default App;
