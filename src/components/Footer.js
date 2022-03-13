@@ -86,7 +86,7 @@ import {
                 <Logo color={useColorModeValue('gray.700', 'white')} />
               </Box>
               <Text fontSize={'sm'}>
-                © 2020 KMSS. All rights reserved
+                © 2022 KMSS. All rights reserved
               </Text>
               <Stack direction={'row'} spacing={6}>
                 <SocialButton label={'Twitter'} href={'#'}>
