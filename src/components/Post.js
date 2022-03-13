@@ -13,7 +13,6 @@ import {
   SpaceProps,
   useColorModeValue,
   Container,
-  VStack,
 } from '@chakra-ui/react';
 
 interface IBlogTags {

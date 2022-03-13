@@ -1,11 +1,9 @@
 import {
   Stack,
   Flex,
-  Button,
   Text,
   VStack,
   useBreakpointValue,
-  BlogTags,
   HStack,
   Image
 } from '@chakra-ui/react';
