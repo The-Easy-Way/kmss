@@ -37,12 +37,14 @@ export default function NavBar() {
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box>
-            <Flex>
-              <Avatar size='sm' name='Logo' src={Clear_Logo} />
-              <Text paddingLeft={'8px'} fontSize={'20px'} fontWeight={600}>
-                KMSS
-              </Text>
-            </Flex>
+            <a href='/'>
+              <Flex>
+                <Avatar size='sm' name='Logo' src={Clear_Logo} />
+                <Text paddingLeft={'8px'} fontSize={'20px'} fontWeight={600}>
+                  KMSS
+                </Text>
+              </Flex>
+            </a>
           </Box>
 
           <Flex alignItems={'center'}>

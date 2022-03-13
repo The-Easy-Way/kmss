@@ -23,12 +23,14 @@ import {
   const Logo = (props: any) => {
     return (
       <Box>
-            <Flex>
-              <Avatar size='sm' name='Logo' src={Clear_Logo} />
-              <Text paddingLeft={'8px'} fontSize={'20px'} fontWeight={600}>
-                KMSS
-              </Text>
-            </Flex>
+        <a href='./'>
+          <Flex>
+            <Avatar size='sm' name='Logo' src={Clear_Logo} />
+            <Text paddingLeft={'8px'} fontSize={'20px'} fontWeight={600}>
+              KMSS
+            </Text>
+          </Flex>
+        </a>
       </Box>
     );
   };
@@ -86,7 +88,7 @@ import {
                 <Logo color={useColorModeValue('gray.700', 'white')} />
               </Box>
               <Text fontSize={'sm'}>
-                © 2020 KMSS. All rights reserved
+                © 2022 KMSS. All rights reserved
               </Text>
               <Stack direction={'row'} spacing={6}>
                 <SocialButton label={'Twitter'} href={'#'}>
@@ -102,9 +104,9 @@ import {
             </Stack>
             <Stack align={'flex-start'}>
               <ListHeader >Club</ListHeader>
-              <Link href={'#'}>About us</Link>
-              <Link href={'#'}>Blog</Link>
-              <Link href={'#'}>Contact us</Link>
+              <Link href={'./about'}>About us</Link>
+              <Link href={'./blog'}>Blog</Link>
+              <Link href={'./contact'}>Contact us</Link>
 
             </Stack>
 

@@ -53,7 +53,7 @@ export default function Home() {
               <a href='/contact'>Contact Us</a>
             </Button>
             <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-              Learn more
+              <a href='./about'>Learn more</a>
             </Button>
             <Box>
               <Icon
@@ -71,7 +71,7 @@ export default function Home() {
                 right={'-125px'}
                 top={'-15px'}
                 transform={'rotate(10deg)'}>
-                Join Now
+                Join
               </Text>
             </Box>
           </Stack>
