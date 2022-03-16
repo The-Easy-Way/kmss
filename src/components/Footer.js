@@ -13,14 +13,14 @@ import {
     Flex,
     Avatar
   } from '@chakra-ui/react';
-  import { ReactNode } from 'react';
+  // import { ReactNode } from 'react';
   import YouTubeIcon from '@material-ui/icons/YouTube';
   import TwitterIcon from '@material-ui/icons/Twitter';
   import InstagramIcon from '@material-ui/icons/Instagram';
   import EmailIcon from '@material-ui/icons/Email';
   import Clear_Logo from '../components/img/logo.jpg'
   
-  const Logo = (props: any) => {
+  const Logo = () => {
     return (
       <Box>
         <a href='./'>
@@ -39,11 +39,13 @@ import {
     children,
     label,
     href,
-  }: {
-    children: ReactNode;
-    label: string;
-    href: string;
-  }) => {
+  }
+  // }: {
+  //   children: ReactNode;
+  //   label: string;
+  //   href: string;
+  // }
+  ) => {
     return (
       <chakra.button
         bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
@@ -66,13 +68,13 @@ import {
     );
   };
   
-  const ListHeader = ({ children }: { children: ReactNode }) => {
-    return (
-      <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
-        {children}
-      </Text>
-    );
-  };
+  // const ListHeader = ({ children }: { children: ReactNode }) => {
+  //   return (
+  //     <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
+  //       {children}
+  //     </Text>
+  //   );
+  // };
   
   export default function Footer() {
     return (
@@ -103,7 +105,7 @@ import {
               </Stack>
             </Stack>
             <Stack align={'flex-start'}>
-              <ListHeader >Club</ListHeader>
+              <li className='foothead'>Club</li>
               <Link href={'./about'}>About us</Link>
               <Link href={'./blog'}>Blog</Link>
               <Link href={'./contact'}>Contact us</Link>
@@ -111,7 +113,7 @@ import {
             </Stack>
 
             <Stack >
-              <ListHeader>Stay up to date</ListHeader>
+              <li className='foothead'>Stay up to date</li>
               <Stack direction={'row'}>
                 <Input
                   placeholder={'Your email address'}
