@@ -46,9 +46,11 @@ export default function About() {
               _hover={{
                 bg: 'green.500',
               }}>
-              Our Blog
+              <a href='./blog'>Our Blog</a>
             </Button>
-            <Button rounded={'full'}>Contact Us</Button>
+            <Button rounded={'full'}>
+            <a href='./contact'>Contact Us</a>
+            </Button>
           </Stack>
         </Stack>
       </Flex>
