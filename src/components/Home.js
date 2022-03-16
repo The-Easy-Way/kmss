@@ -71,7 +71,7 @@ export default function Home() {
                 right={'-125px'}
                 top={'-15px'}
                 transform={'rotate(10deg)'}>
-                Join
+                Join Now   
               </Text>
             </Box>
           </Stack>
