@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react';
 import image from '../components/img/7.jpg'
 
-export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
+export const BlogAuthor= (props) => {
   return (
     <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
       <Image
@@ -44,10 +44,6 @@ export default function SinglePost() {
         justify={'center'}
         px={useBreakpointValue({ base: 4, md: 8 })}
         bgGradient={'linear(to-r, blackAlpha.600, transparent)'}>
-        {/* <Stack maxW={'2xl'} align={'flex-end'} spacing={6}>
-          
-
-        </Stack> */}
       </VStack>
     </Flex>
             <Text
@@ -73,7 +69,6 @@ export default function SinglePost() {
       </Text>
       {/* //Discription or Short Intro*/}
       <Text 
-        // fontSize='lg'
         margin={'0 auto 0 auto'}
         marginBottom={'30px'}
         fontSize={useBreakpointValue({ base: 'xl', md: 'xl' })}>
