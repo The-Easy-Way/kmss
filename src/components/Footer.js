@@ -1,3 +1,4 @@
+import './style.css'
 import {
     Box,
     chakra,
@@ -40,11 +41,6 @@ import {
     label,
     href,
   }
-  // }: {
-  //   children: ReactNode;
-  //   label: string;
-  //   href: string;
-  // }
   ) => {
     return (
       <chakra.button
@@ -68,13 +64,6 @@ import {
     );
   };
   
-  // const ListHeader = ({ children }: { children: ReactNode }) => {
-  //   return (
-  //     <Text fontWeight={'500'} fontSize={'lg'} mb={2}>
-  //       {children}
-  //     </Text>
-  //   );
-  // };
   
   export default function Footer() {
     return (
@@ -105,7 +94,7 @@ import {
               </Stack>
             </Stack>
             <Stack align={'flex-start'}>
-              <li className='foothead'>Club</li>
+              <Text className='foothead'>Club</Text>
               <Link href={'./about'}>About us</Link>
               <Link href={'./blog'}>Blog</Link>
               <Link href={'./contact'}>Contact us</Link>
@@ -113,7 +102,7 @@ import {
             </Stack>
 
             <Stack >
-              <li className='foothead'>Stay up to date</li>
+              <Text className='foothead'>Stay up to date</Text>
               <Stack direction={'row'}>
                 <Input
                   placeholder={'Your email address'}

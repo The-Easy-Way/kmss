@@ -43,13 +43,14 @@ export default function About() {
               rounded={'full'}
               bg={'green.400'}
               color={'white'}
+              href={'/blog'}
               _hover={{
                 bg: 'green.500',
               }}>
-              <a href='./blog'>Our Blog</a>
+              Our Blog
             </Button>
-            <Button rounded={'full'}>
-            <a href='./contact'>Contact Us</a>
+            <Button rounded={'full'} href={'/contact'}>
+            Contact Us
             </Button>
           </Stack>
         </Stack>

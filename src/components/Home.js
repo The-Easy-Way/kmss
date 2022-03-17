@@ -1,4 +1,3 @@
-// import Head from 'next/head';
 import Post from './Post';
 import Contact from './Contact';
 import {
@@ -47,13 +46,14 @@ export default function Home() {
               bg={'green.400'}
               rounded={'full'}
               px={6}
+              href={'/contact'}
               _hover={{
                 bg: 'green.500',
               }}>
-              <a href='/contact'>Contact Us</a>
+              Contact Us
             </Button>
-            <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
-              <a href='./about'>Learn more</a>
+            <Button variant={'link'} colorScheme={'blue'} size={'sm'} href={'/about'}>
+              Learn more
             </Button>
             <Box>
               <Icon

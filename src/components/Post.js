@@ -10,17 +10,17 @@ import {
   Tag,
   Wrap,
   WrapItem,
-  SpaceProps,
+  // SpaceProps,
   useColorModeValue,
   Container,
 } from '@chakra-ui/react';
 
-interface IBlogTags {
-  tags: Array<string>;
-  marginTop?: SpaceProps['marginTop'];
-}
+// interface IBlogTags {
+//   tags: Array<string>;
+//   marginTop?: SpaceProps['marginTop'];
+// }
 
-const BlogTags: React.FC<IBlogTags> = (props) => {
+const BlogTags = (props) => {
   return (
     <HStack spacing={2} marginTop={props.marginTop}>
       {props.tags.map((tag) => {
@@ -34,12 +34,12 @@ const BlogTags: React.FC<IBlogTags> = (props) => {
   );
 };
 
-interface BlogAuthorProps {
-  date: Date;
-  name: string;
-}
+// interface BlogAuthorProps {
+//   date: Date;
+//   name: string;
+// }
 
-export const BlogAuthor: React.FC<BlogAuthorProps> = (props) => {
+export const BlogAuthor = (props) => {
   return (
     <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
       <Image
@@ -75,7 +75,7 @@ const Post = () => {
             zIndex="2"
             marginLeft={{ base: '0', sm: '5%' }}
             marginTop="5%">
-            <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+            <Link to='/blog/test' textDecoration="none" _hover={{ textDecoration: 'none' }}>
               <Image
                 borderRadius="lg"
                 src={
@@ -106,10 +106,9 @@ const Post = () => {
           justifyContent="center"
           marginTop={{ base: '3', sm: '0' }}>
           
-        <a href='/blog/test'>
           <BlogTags tags={['Math', 'Pi Day']} />
           <Heading marginTop="1">
-            <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+            <Link to='/blog/test' textDecoration="none" _hover={{ textDecoration: 'none' }}>
               Pi in the Sky
             </Link>
           </Heading>
@@ -121,7 +120,7 @@ const Post = () => {
             This is an article about google breaking the calculation record using google cloud in 14/3 2019 (Pi day).
           </Text>
           <BlogAuthor name="Manish Poudel" date={new Date('2022-03-12T19:01:27Z')} />
-        </a>
+
         </Box>
       </Box>
       <Heading as="h2" marginTop="5">
@@ -131,10 +130,9 @@ const Post = () => {
       <Wrap spacing="30px" marginTop="5">
 
         <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-        <a href='/blog/test'>
           <Box w="100%">
             <Box borderRadius="lg" overflow="hidden">
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              <Link to='/blog/test' textDecoration="none" _hover={{ textDecoration: 'none' }}>
                 <Image
                   transform="scale(1.0)"
                   src={
@@ -152,7 +150,7 @@ const Post = () => {
             </Box>
             <BlogTags tags={['Math', 'Algorithm']} marginTop="3" />
             <Heading fontSize="xl" marginTop="2">
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              <Link to='/blog/test' textDecoration="none" _hover={{ textDecoration: 'none' }}>
                   Data Structures and Algorithm
               </Link>
             </Heading>
@@ -164,14 +162,13 @@ const Post = () => {
               date={new Date('2022-03-22T19:01:27Z')}
             />
           </Box>
-          </a>
         </WrapItem>
 
+
         <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-        <a href='/blog/test'>
           <Box w="100%">
             <Box borderRadius="lg" overflow="hidden">
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              <Link to='/blog/test' textDecoration="none" _hover={{ textDecoration: 'none' }}>
                 <Image
                   transform="scale(1.0)"
                   src={
@@ -189,7 +186,7 @@ const Post = () => {
             </Box>
             <BlogTags tags={['Math', 'Algorithm']} marginTop="3" />
             <Heading fontSize="xl" marginTop="2">
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              <Link to='/blog/test' textDecoration="none" _hover={{ textDecoration: 'none' }}>
                   Data Structures and Algorithm
               </Link>
             </Heading>
@@ -201,14 +198,13 @@ const Post = () => {
               date={new Date('2022-03-22T19:01:27Z')}
             />
           </Box>
-          </a>
         </WrapItem>
+
         
         <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-        <a href='/blog/test'>
           <Box w="100%">
             <Box borderRadius="lg" overflow="hidden">
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              <Link to='/blog/test' textDecoration="none" _hover={{ textDecoration: 'none' }}>
                 <Image
                   transform="scale(1.0)"
                   src={
@@ -227,7 +223,7 @@ const Post = () => {
       
             <BlogTags tags={['Math', 'Algorithm']} marginTop="3" />
             <Heading fontSize="xl" marginTop="2">
-              <Link textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              <Link to='/blog/test' textDecoration="none" _hover={{ textDecoration: 'none' }}>
                   Data Structures and Algorithm
               </Link>
             </Heading>
@@ -239,7 +235,6 @@ const Post = () => {
               date={new Date('2022-03-22T19:01:27Z')}
             />
           </Box>
-          </a>
         </WrapItem>
       </Wrap>
 

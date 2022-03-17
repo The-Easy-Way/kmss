@@ -55,11 +55,11 @@ export default function NavBar() {
             fontWeight={600}
             color={'white'}
             bg={'green.500'}
-            href={'#'}
+            href={'/blog'}
             _hover={{
               bg: 'green.400',
             }}>
-            <a href='/blog'>Blog</a>
+            Blog
           </Button>
         </Stack>
               </Menu>
