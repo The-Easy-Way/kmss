@@ -7,6 +7,7 @@ import {
   Text,
   useBreakpointValue,
 } from '@chakra-ui/react';
+import React from 'react';
 
 export default function About() {
   return (
@@ -44,12 +45,13 @@ export default function About() {
               bg={'green.400'}
               color={'white'}
               href={'/blog'}
+              alt={"Our blog button"}
               _hover={{
                 bg: 'green.500',
               }}>
               Our Blog
             </Button>
-            <Button rounded={'full'} href={'/contact'}>
+            <Button rounded={'full'} href={'/contact'} alt={"contact us button"}>
             Contact Us
             </Button>
           </Stack>
@@ -57,7 +59,7 @@ export default function About() {
       </Flex>
       <Flex flex={1}>
         <Image
-          alt={'Login Image'}
+          alt={'Teams Image'}
           objectFit={'cover'}
           src={
             'https://images.unsplash.com/photo-1527689368864-3a821dbccc34?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'

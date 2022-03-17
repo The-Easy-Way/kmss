@@ -84,6 +84,7 @@ import {
                       variant="ghost"
                       size="lg"
                       fontSize="3xl"
+                      alt={"email button"}
                       icon={<EmailIcon />}
                       _hover={{
                         bg: 'green.300',
@@ -97,6 +98,7 @@ import {
                   <Link href="#">
                     <IconButton
                       aria-label="github"
+                      alt={"github button"}
                       variant="ghost"
                       size="lg"
                       fontSize="3xl"
@@ -112,6 +114,7 @@ import {
                   <Link href="#">
                     <IconButton
                       aria-label="twitter"
+                      alt={"twitter button"}
                       variant="ghost"
                       size="lg"
                       icon={<TwitterIcon size="28px" />}
@@ -125,6 +128,7 @@ import {
   
                   <Link href="#">
                     <IconButton
+                      alt={"linkedIn button"}
                       aria-label="linkedin"
                       variant="ghost"
                       size="lg"
@@ -183,6 +187,7 @@ import {
   
                     <Button
                       colorScheme="green"
+                      alt={"Send Message button"}
                       bg="green.400"
                       color="white"
                       _hover={{

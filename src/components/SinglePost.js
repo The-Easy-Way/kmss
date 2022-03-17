@@ -1,31 +1,71 @@
+import React, { useState, useEffect } from "react";
 import {
   // Stack,
   Flex,
   Text,
   VStack,
-  useBreakpointValue,
+  // useBreakpointValue,
   HStack,
   Image
 } from '@chakra-ui/react';
-import image from '../components/img/7.jpg'
+import { useParams } from "react-router-dom";
+import sanityClient from "../client.js";
+import imageUrlBuilder from "@sanity/image-url";
+import BlockContent from "@sanity/block-content-to-react";
 
-export const BlogAuthor= (props) => {
+
+export const BlogAuthor = (props) => {
   return (
     <HStack marginTop="2" spacing="2" display="flex" alignItems="center">
       <Image
         borderRadius="full"
         boxSize="40px"
-        src="https://ozgrozer.github.io/100k-faces/0/2/002577.jpg"
-        alt={`Avatar of ${props.name}`}
+        src={props.image}
+        alt={props.name}
       />
       <Text fontWeight="medium">{props.name}</Text>
       <Text>—</Text>
-      <Text>{props.date.toLocaleDateString()}</Text>
+      <Text>{props.publishedAt}</Text>
     </HStack>
   );
 };
 
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source) {
+  return builder.image(source);
+}
+
 export default function SinglePost() {
+  const [singlePost, setSinglePost] = useState(null);
+  const { slug } = useParams();
+
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[slug.current == "${slug}"]{
+        title,
+        _id,
+        slug,
+        mainImage{
+          asset->{
+            _id,
+              url
+            }
+          },
+          body,
+          discription,
+          publishedAt,
+          "name": author->name,
+          "authorImage": author->image
+        }`
+      )
+      .then((data) => setSinglePost(data[0]))
+      .catch(console.error);
+  }, [slug]);
+
+  // let mainImg= "src={singlePost.mainImage.asset.url}"
+  if (!singlePost) return (<Flex h={'55vh'} justify={"center"} align={"center"}><Text fontSize={"xl"}>Loading...</Text></Flex>)
+
   return (
     <>
     <Flex
@@ -35,14 +75,14 @@ export default function SinglePost() {
       border={'2px #6BA4A6 solid'}
       borderRadius={'5px'}
       backgroundImage={
-        image
+        singlePost.mainImage.asset.url
       }
       backgroundSize={'cover'}
       backgroundPosition={'center center'}>
       <VStack
         w={'100%'}
         justify={'center'}
-        px={useBreakpointValue({ base: 4, md: 8 })}
+        // px={useBreakpointValue({ base: 4, md: 8 })}
         bgGradient={'linear(to-r, blackAlpha.600, transparent)'}>
       </VStack>
     </Flex>
@@ -51,8 +91,9 @@ export default function SinglePost() {
               lineHeight={1.2}
               textAlign={'center'}
               margin={'0 0 30px 0px'}
-              fontSize={useBreakpointValue({ base: '4xl', md: '4xl' })}>
-              <span>💻</span>Mathematical Computational
+              fontSize={'4xl'}
+              >
+              {singlePost.title}
             </Text>
           
     <Flex 
@@ -64,25 +105,32 @@ export default function SinglePost() {
       <Text
         as='b'
         marginBottom={'10px'}
-        fontSize={useBreakpointValue({ base: '2xl', md: '2xl' })}>
-        Summary:
+        fontSize={'2xl'}
+        >
+        Discription:
       </Text>
+
       {/* //Discription or Short Intro*/}
-      <Text 
+     
+      {/* <Text 
         margin={'0 auto 0 auto'}
         marginBottom={'30px'}
         fontSize={useBreakpointValue({ base: 'xl', md: 'xl' })}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat diam ut venenatis tellus in metus. Feugiat sed lectus vestibulum mattis ullamcorper. Placerat vestibulum lectus mauris ultrices eros in. Libero id faucibus nisl tincidunt. Egestas congue quisque egestas diam in arcu cursus. Sit amet dictum sit amet justo. Eget nunc lobortis mattis aliquam faucibus purus in. Magna fermentum iaculis eu non diam. Nunc sed velit dignissim sodales ut eu sem integer vitae. Elementum facilisis leo vel fringilla est ullamcorper eget. Vel eros donec ac odio tempor.
-      </Text>
+      
+      </Text> */}
+      <BlockContent blocks={singlePost.discription} projectId="41vjc7q7" dataset='production' />
+      <Text margin={'0 0 20px 0px'}></Text>
 
       {/* Main Part */}
       <Text
         as='b'
         marginBottom={'10px'}
-        fontSize={useBreakpointValue({ base: '2xl', md: '2xl' })}>
+        fontSize={'2xl'}
+        >
         Full Article:
       </Text>
-      <Text 
+
+      {/* <Text 
         margin={'0 auto 0 auto'}
         marginBottom={'30px'}
         fontSize={useBreakpointValue({ base: 'xl', md: 'xl' })}>
@@ -90,12 +138,24 @@ export default function SinglePost() {
       <br/>
       <br/>
 Mattis vulputate enim nulla aliquet. Quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum. Ultrices vitae auctor eu augue ut lectus arcu. Ac tincidunt vitae semper quis lectus nulla at volutpat. Nullam non nisi est sit amet facilisis magna etiam. Ipsum dolor sit amet consectetur adipiscing. Phasellus faucibus scelerisque eleifend donec. Diam maecenas ultricies mi eget mauris pharetra et ultrices neque. Vestibulum morbi blandit cursus risus at ultrices mi tempus. Vitae auctor eu augue ut. Aliquam ultrices sagittis orci a scelerisque. Quis commodo odio aenean sed adipiscing. Placerat in egestas erat imperdiet sed euismod. Aenean euismod elementum nisi quis eleifend quam adipiscing vitae.
-      </Text>
+      </Text> */}
+      <BlockContent blocks={singlePost.body} projectId="41vjc7q7" dataset='production' />
 
-            <BlogAuthor
-              name="Samrid Pandit"
+            {/* <BlogAuthor
+              name={singlePost.name}
               margin={'0 200px 0 50%'}
-              date={new Date('2022-03-22T19:01:27Z')}
+              src={urlFor(singlePost.authorImage).url()}
+              // date={new Date('2022-03-22T19:01:27Z')}
+              publishedAt={singlePost.publishedAt}
+            /> */}
+              <BlogAuthor
+              name={singlePost.name}
+              publishedAt={singlePost.publishedAt.split('T')[0]}
+              image={
+                urlFor(singlePost.authorImage).url()
+                // post.authorImage
+                // .image.asset.url
+              }
             />
     </Flex>
 

@@ -1,5 +1,6 @@
 import Post from './Post';
 import Contact from './Contact';
+import React from 'react';
 import {
   Box,
   Heading,

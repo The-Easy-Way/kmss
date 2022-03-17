@@ -1,4 +1,4 @@
-
+import React from 'react';
 import {
   Box,
   Flex,
@@ -32,7 +32,7 @@ export default function NavBar() {
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
-              <Button onClick={toggleColorMode}>
+              <Button onClick={toggleColorMode} alt={"dark-light toogle button"} aria-label={"dark mode toogle button"}>
                 {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
               </Button>
               <Menu>
@@ -56,6 +56,7 @@ export default function NavBar() {
             color={'white'}
             bg={'green.500'}
             href={'/blog'}
+            alt={"blog button"}
             _hover={{
               bg: 'green.400',
             }}>
