@@ -148,6 +148,7 @@ Mattis vulputate enim nulla aliquet. Quam elementum pulvinar etiam non quam lacu
               // date={new Date('2022-03-22T19:01:27Z')}
               publishedAt={singlePost.publishedAt}
             /> */}
+            <Text margin={'0 0 20px 0px'}></Text>
               <BlogAuthor
               name={singlePost.name}
               publishedAt={singlePost.publishedAt.split('T')[0]}
