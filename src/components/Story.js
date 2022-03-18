@@ -143,6 +143,8 @@ function urlFor(source) {
             marginTop="5%">
           <Link href={"/stories/" + stories.slug.current} key={stories.slug.current} textDecoration="none" _hover={{ textDecoration: 'none' }}>
               <Image
+                maxH={"90vh"}
+                margin={"auto auto 25px auto"}
                 borderRadius="lg"
                 src={stories.mainImage.asset.url}
                 alt={stories.mainImage.alt}
@@ -170,7 +172,7 @@ function urlFor(source) {
           justifyContent="center"
           marginTop={{ base: '3', sm: '0' }}>
           
-          <BlogTags tags={['Math', 'Pi Day']} />
+          <BlogTags tags={stories.tags} />
           <Heading marginTop="1">
           <Link href={"/stories/" + stories.slug.current} key={stories.slug.current} textDecoration="none" _hover={{ textDecoration: 'none' }}>
               {stories.title}
