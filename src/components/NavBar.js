@@ -12,6 +12,7 @@ import {
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Clear_Logo from '../components/img/logo.jpg'
+import { Link } from 'react-router-dom';
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -20,14 +21,14 @@ export default function NavBar() {
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Box>
-            <a href='/'>
+            <Link to={"/"}>
               <Flex>
                 <Avatar size='sm' name='Logo' src={Clear_Logo} />
                 <Text paddingLeft={'8px'} fontSize={'20px'} fontWeight={600}>
                   KMSS
                 </Text>
               </Flex>
-            </a>
+            </Link>
           </Box>
 
           <Flex alignItems={'center'}>
@@ -49,19 +50,22 @@ export default function NavBar() {
             href={'#'}>
             About Us
           </Button> */}
-          <Button
-            display={{ base: 1, md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'green.500'}
-            href={'/blog'}
-            alt={"blog button"}
-            _hover={{
-              bg: 'green.400',
-            }}>
-            Blog
-          </Button>
+          <Link to={"/blog"}>
+            <Button
+              display={{ base: 1, md: 'inline-flex' }}
+              fontSize={'sm'}
+              fontWeight={600}
+              color={'white'}
+              bg={'green.500'}
+              alt={"blog button"}
+              _hover={{
+                bg: 'green.400',
+                
+              }}
+              >
+              Blog
+            </Button>
+          </Link>
         </Stack>
               </Menu>
             </Stack>

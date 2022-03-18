@@ -12,17 +12,13 @@ import {
   Wrap,
   WrapItem,
   // SpaceProps,
-  // useColorModeValue,
+  useColorModeValue,
   Container,
 } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
 import sanityClient from '../client.js';
 import imageUrlBuilder from "@sanity/image-url";
 
-// interface IBlogTags {
-//   tags: Array<string>;
-//   marginTop?: SpaceProps['marginTop'];
-// }
 
 const BlogTags = (props) => {
   return (
@@ -38,10 +34,6 @@ const BlogTags = (props) => {
   );
 };
 
-// interface BlogAuthorProps {
-//   date: Date;
-//   name: string;
-// }
 
 export const BlogAuthor = (props) => {
   return (
@@ -61,8 +53,8 @@ export const BlogAuthor = (props) => {
 
 
 
-const Post = () => {
-  const [postData, setPost] = useState(null);
+export const Story = () => {
+  const [storiesData, setStories] = useState(null);
 
 
   const builder = imageUrlBuilder(sanityClient);
@@ -76,7 +68,7 @@ function urlFor(source) {
       useEffect(() => {
         sanityClient
           .fetch(
-            `*[_type == "post"][0..2] | order(publishedAt desc){
+            `*[_type == "stories"][0] | order(publishedAt desc){
             title,
             slug,
             body,
@@ -94,14 +86,14 @@ function urlFor(source) {
             "authorImage": author->image,
           }`
           )
-          .then((data) => setPost(data))
+          .then((data) => setStories(data))
           .catch(console.error);
       }, []);
   }else{
     useEffect(() => {
       sanityClient
         .fetch(
-          `*[_type == "post"]{
+          `*[_type == "stories"]{
           title,
           slug,
           body,
@@ -119,7 +111,7 @@ function urlFor(source) {
           "authorImage": author->image,
         }`
         )
-        .then((data) => setPost(data))
+        .then((data) => setStories(data))
         .catch(console.error);
     }, []);
   }
@@ -129,7 +121,9 @@ function urlFor(source) {
     <Container maxW={'7xl'} 
     p="12"
     >
-      {/* <Heading as="h1">Stories by KMSS</Heading>
+      <Heading as="h1">Stories by KMSS</Heading>
+      {storiesData &&
+          storiesData.map((stories, index) => (
       <article>
       <Box
         marginTop={{ base: '1', sm: '5' }}
@@ -147,12 +141,12 @@ function urlFor(source) {
             zIndex="2"
             marginLeft={{ base: '0', sm: '5%' }}
             marginTop="5%">
-            <Link to='/blog/test' textDecoration="none" _hover={{ textDecoration: 'none' }}>
+          <Link href={"/stories/" + stories.slug.current} key={stories.slug.current} textDecoration="none" _hover={{ textDecoration: 'none' }}>
               <Image
-                // borderRadius="lg"
-                // src={post.mainImage.asset.url}
-                // alt={post.mainImage.alt}
-                // objectFit="contain"
+                borderRadius="lg"
+                src={stories.mainImage.asset.url}
+                alt={stories.mainImage.alt}
+                objectFit="contain"
               />
             </Link>
           </Box>
@@ -178,85 +172,32 @@ function urlFor(source) {
           
           <BlogTags tags={['Math', 'Pi Day']} />
           <Heading marginTop="1">
-            <Link to='/blog/test' textDecoration="none" _hover={{ textDecoration: 'none' }}>
-              {/* Pi in the Sky */}
-              {/* {post.title} */}
-            {/* </Link>
+          <Link href={"/stories/" + stories.slug.current} key={stories.slug.current} textDecoration="none" _hover={{ textDecoration: 'none' }}>
+              {stories.title}
+            </Link>
           </Heading>
           <Text
-            as="p"
+            
             marginTop="2"
             color={useColorModeValue('gray.700', 'gray.200')}
             fontSize="lg">
-            This is an article about google breaking the calculation record using google cloud in 14/3 2019 (Pi day).
+            
           </Text>
-          <BlogAuthor name="Manish Poudel" publishedAt={'2022-03-12T19:01:27Z'} />
+          <BlogAuthor 
+          name={stories.name}
+          publishedAt={stories.publishedAt}
+          image={
+            urlFor(stories.authorImage).url()
+          }
+          />
 
         </Box>
       </Box>
-      </article> */}
-      
-
-      <Heading as="h2" 
-      // marginTop="5"
-      marginTop="-10"
-      >
-        Latest articles
-      </Heading>
-      <Divider marginTop="5" />
-      <Wrap spacing="30px" marginTop="5">
-        
-
-        {postData &&
-          postData.map((post, index) => (
-          // authorData.map((author, index) => (
-        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-          <Box w="100%">
-            <Box borderRadius="lg" overflow="hidden">
-              <Link href={"/blog/" + post.slug.current} key={post.slug.current} textDecoration="none" _hover={{ textDecoration: 'none' }}>
-                <Image
-                  transform="scale(1.0)"
-                  src={post.mainImage.asset.url}
-                  alt={post.mainImage.alt}
-                  objectFit="contain"
-                  width="100%"
-                  transition="0.3s ease-in-out"
-                  _hover={{
-                    transform: 'scale(1.05)',
-                  }}
-                />
-              </Link>
-            </Box>
-            <BlogTags tags={post.tags} marginTop="3" />
-            <Heading fontSize="xl" marginTop="2">
-              <Link href={"/blog/" + post.slug.current} key={post.slug.current} textDecoration="none" _hover={{ textDecoration: 'none' }}>
-              {post.title}
-              </Link>
-            </Heading>
-            <Text as="p" fontSize="md" marginTop="2">
-
-            <BlockContent blocks={post.discription} projectId="41vjc7q7" dataset='production' />
-
-            </Text>
-            <BlogAuthor
-              name={post.name}
-              publishedAt={post.publishedAt}
-              image={
-                urlFor(post.authorImage).url()
-                // post.authorImage
-                // .image.asset.url
-              }
-            />
-          </Box>
-        </WrapItem>
-        ))
-        }
-    
-      </Wrap>
-
+      </article>
+          ))}
       
     </Container>
   );
 };
 
-export default Post;
+export default Story;

@@ -8,6 +8,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function About() {
   return (
@@ -40,20 +41,23 @@ export default function About() {
           
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
-            <Button
-              rounded={'full'}
-              bg={'green.400'}
-              color={'white'}
-              href={'/blog'}
-              alt={"Our blog button"}
-              _hover={{
-                bg: 'green.500',
-              }}>
-              Our Blog
-            </Button>
-            <Button rounded={'full'} href={'/contact'} alt={"contact us button"}>
-            Contact Us
-            </Button>
+            <Link to={"/blog/"}>
+              <Button
+                rounded={'full'}
+                bg={'green.400'}
+                color={'white'}
+                alt={"Our blog button"}
+                _hover={{
+                  bg: 'green.500',
+                }}>
+                Our Blog
+              </Button>
+            </Link >
+            <Link to={'/contact'}>
+              <Button rounded={'full'} alt={"contact us button"}>
+              Contact Us
+              </Button>
+            </Link>
           </Stack>
         </Stack>
       </Flex>
