@@ -68,7 +68,7 @@ function urlFor(source) {
       useEffect(() => {
         sanityClient
           .fetch(
-            `*[_type == "stories"][0] | order(publishedAt desc){
+            `*[_type == "stories"][0...1] | order(publishedAt desc){
             title,
             slug,
             body,
@@ -178,13 +178,11 @@ function urlFor(source) {
               {stories.title}
             </Link>
           </Heading>
-          <Text
-            
-            marginTop="2"
-            color={useColorModeValue('gray.700', 'gray.200')}
-            fontSize="lg">
-            
-          </Text>
+          <Text margin={'0 0 10px 0px'}></Text>
+          
+          <BlockContent blocks={stories.discription} projectId="41vjc7q7" dataset='production' />
+          <Text margin={'0 0 10px 0px'}></Text>
+
           <BlogAuthor 
           name={stories.name}
           publishedAt={stories.publishedAt}

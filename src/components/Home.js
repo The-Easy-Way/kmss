@@ -1,6 +1,7 @@
 import Post from './Post';
 import Contact from './Contact';
 import React from 'react';
+import Story from './Story';
 import {
   Box,
   Heading,
@@ -78,6 +79,7 @@ export default function Home() {
           </Stack>
         </Stack>
       </Container>
+      <Story />
       <Post/>
       <Contact/>
     </>
