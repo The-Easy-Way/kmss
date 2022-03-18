@@ -13,6 +13,7 @@ import {
   useColorModeValue,
   createIcon,
 } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -43,20 +44,23 @@ export default function Home() {
             align={'center'}
             alignSelf={'center'}
             position={'relative'}>
-            <Button
-              colorScheme={'green'}
-              bg={'green.400'}
-              rounded={'full'}
-              px={6}
-              href={'/contact'}
-              _hover={{
-                bg: 'green.500',
-              }}>
-              Contact Us
-            </Button>
-            <Button variant={'link'} colorScheme={'blue'} size={'sm'} href={'/about'}>
-              Learn more
-            </Button>
+            <Link to={"/contact"}>
+              <Button
+                colorScheme={'green'}
+                bg={'green.400'}
+                rounded={'full'}
+                px={6}
+                _hover={{
+                  bg: 'green.500',
+                }}>
+                Contact Us
+              </Button>
+            </Link>
+            <Link to={"/about"}>
+              <Button variant={'link'} colorScheme={'blue'} size={'sm'}>
+                Learn more
+              </Button>
+            </Link>
             <Box>
               <Icon
                 as={Arrow}

@@ -97,6 +97,7 @@ import {
             <Stack align={'flex-start'}>
               <Text className='foothead'>Club</Text>
               <Link href={'./about'}>About us</Link>
+              <Link href={'./stories'}>Our Stories</Link>
               <Link href={'./blog'}>Blog</Link>
               <Link href={'./contact'}>Contact us</Link>
 
