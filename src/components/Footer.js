@@ -89,7 +89,7 @@ import {
                 <SocialButton label={'YouTube'} href={'#'}>
                   <YouTubeIcon />
                 </SocialButton>
-                <SocialButton label={'Instagram'} href={'#'}>
+                <SocialButton label={'Instagram'} href={'https://instagram.com/kmssmath'}>
                   <InstagramIcon />
                 </SocialButton>
               </Stack>
