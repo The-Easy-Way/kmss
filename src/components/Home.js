@@ -35,8 +35,7 @@ export default function Home() {
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-            Our goal is to teach people the importance of math in daily life and How it is affecting
-            every one.
+            Our goal is to sharpen the skills and connect with fellow maths enthusiasts in a supportive and challenging environment.
           </Text>
           <Stack
             direction={'column'}
