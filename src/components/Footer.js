@@ -28,7 +28,7 @@ import {
           <Flex>
             <Avatar size='sm' name='Logo' src={Clear_Logo} />
             <Text paddingLeft={'8px'} fontSize={'20px'} fontWeight={600}>
-              KMSS
+              KMSS Maths Club
             </Text>
           </Flex>
         </a>
