@@ -16,8 +16,7 @@ import {
     Avatar
   } from '@chakra-ui/react';
   // import { ReactNode } from 'react';
-  import YouTubeIcon from '@material-ui/icons/YouTube';
-  import TwitterIcon from '@material-ui/icons/Twitter';
+  import FacebookIcon from '@material-ui/icons/Facebook';
   import InstagramIcon from '@material-ui/icons/Instagram';
   import EmailIcon from '@material-ui/icons/Email';
   import Clear_Logo from '../components/img/logo.jpg'
@@ -80,14 +79,11 @@ import {
                 <Logo color={useColorModeValue('gray.700', 'white')} />
               </Box>
               <Text fontSize={'sm'}>
-                © 2022 KMSS. All rights reserved
+                © 2023 KMSS Maths Club. All rights reserved.
               </Text>
               <Stack direction={'row'} spacing={6}>
-                <SocialButton label={'Twitter'} href={'#'}>
-                  <TwitterIcon />
-                </SocialButton>
-                <SocialButton label={'YouTube'} href={'#'}>
-                  <YouTubeIcon />
+                <SocialButton label={'Facebook'} href={'https://www.facebook.com/mathsclub.kmss'}>
+                  <FacebookIcon />
                 </SocialButton>
                 <SocialButton label={'Instagram'} href={'https://instagram.com/kmssmath'}>
                   <InstagramIcon />
