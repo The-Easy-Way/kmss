@@ -37,7 +37,7 @@ export default function About() {
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-          Our goal is to make people areware about the importance of Mathematics in daily life and teach people the valuable resources that will help them be their best versions of themselves and stand out in this crowded world.
+          Our goal is to make people aware about the importance of Mathematics in daily life and teach people the valuable resources that will help them be their best versions of themselves and stand out in this crowded world.
           
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
