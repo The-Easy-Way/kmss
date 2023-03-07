@@ -33,11 +33,11 @@ export default function About() {
             </Text>
             <br />{' '}
             <Text color={'green.400'} as={'span'}>
-              Math Club
+              Maths Club
             </Text>{' '}
           </Heading>
           <Text fontSize={{ base: 'md', lg: 'lg' }} color={'gray.500'}>
-          Our goal is to make people aware about the importance of Mathematics in daily life and teach people the valuable resources that will help them be their best versions of themselves and stand out in this crowded world.
+          We are a community of students passionate about numbers, problem-solving, and exploring the fascinating world of mathematics. We offer guest lectures, workshops, and competitions that provide a supportive and collaborative environment to develop your skills and connect with other math enthusiasts. We encourage you to check back with us soon for updates on future opportunities to get involved and take your math skills to the next level!
           
           </Text>
           <Stack direction={{ base: 'column', md: 'row' }} spacing={4}>
