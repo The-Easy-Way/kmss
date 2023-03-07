@@ -121,7 +121,7 @@ function urlFor(source) {
     <Container maxW={'7xl'} 
     p="12"
     >
-      <Heading as="h1">Stories by KMSS</Heading>
+      <Heading as="h1">Stories by KMSS Maths Club</Heading>
       {storiesData &&
           storiesData.map((stories, index) => (
       <article>
