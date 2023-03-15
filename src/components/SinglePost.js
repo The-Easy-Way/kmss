@@ -53,7 +53,7 @@ export default function SinglePost() {
             }
           },
           body,
-          discription,
+          description,
           publishedAt,
           "name": author->name,
           "authorImage": author->image
@@ -107,10 +107,10 @@ export default function SinglePost() {
         marginBottom={'10px'}
         fontSize={'2xl'}
         >
-        Discription:
+        Description:
       </Text>
 
-      {/* //Discription or Short Intro*/}
+      {/* //Description or Short Intro*/}
      
       {/* <Text 
         margin={'0 auto 0 auto'}
@@ -118,7 +118,7 @@ export default function SinglePost() {
         fontSize={useBreakpointValue({ base: 'xl', md: 'xl' })}>
       
       </Text> */}
-      <BlockContent blocks={singlePost.discription} projectId="41vjc7q7" dataset='production' />
+      <BlockContent blocks={singlePost.description} projectId="41vjc7q7" dataset='production' />
       <Text margin={'0 0 20px 0px'}></Text>
 
       {/* Main Part */}
