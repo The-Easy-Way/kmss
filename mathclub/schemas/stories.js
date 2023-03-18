@@ -43,8 +43,8 @@ export default {
       type: 'datetime',
     },
     {
-      name: 'discription',
-      title: 'Discription',
+      name: 'description',
+      title: 'Description',
       type: 'blockContent',
     },
     {
