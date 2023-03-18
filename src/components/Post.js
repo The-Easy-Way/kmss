@@ -105,7 +105,7 @@ function urlFor(source) {
           title,
           slug,
           body,
-          discription,
+          description,
           publishedAt,
           tags,
           mainImage{
