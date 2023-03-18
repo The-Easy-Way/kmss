@@ -80,7 +80,7 @@ function urlFor(source) {
             title,
             slug,
             body,
-            discription,
+            description,
             publishedAt,
             tags,
             mainImage{
@@ -168,7 +168,7 @@ function urlFor(source) {
             </Heading>
             <Text as="p" fontSize="md" marginTop="2">
 
-            <BlockContent blocks={post.discription} projectId="41vjc7q7" dataset='production' />
+            <BlockContent blocks={post.description} projectId="41vjc7q7" dataset='production' />
 
             </Text>
             <BlogAuthor
